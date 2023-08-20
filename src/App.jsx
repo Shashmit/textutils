@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-import About from "./components/About";
+// import About from "./components/About";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import Alert from "./components/Alert";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [mode, setmode] = useState("white");
@@ -32,17 +32,9 @@ function App() {
   };
   return (
     <div className="blank">
-      <BrowserRouter>
-        <Navbar mode={mode} toggleMode={toggleMode} />
-        <Alert alert={alert} />
-        <Routes>
-          <Route
-            path="/"
-            element={<HeroSection showAlert={showAlert} mode={mode} />}
-          />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </BrowserRouter>
+      <Navbar mode={mode} toggleMode={toggleMode} />
+      <Alert alert={alert} />
+      <HeroSection showAlert={showAlert} mode={mode} />
     </div>
   );
 }
